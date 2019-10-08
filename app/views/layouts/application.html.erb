@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OdinFacebook</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title><%= yield(:title) %></title>
+		<%= render 'layouts/rails_defaults' %>
+		<%= render 'layouts/shim' %>
   </head>
 
   <body>
+		<%= render 'layouts/header' %>
     <%= yield %>
+		<%= render 'layouts/footer'%>
+		<%= debug(params) if Rails.env.development? %>
   </body>
 </html>
