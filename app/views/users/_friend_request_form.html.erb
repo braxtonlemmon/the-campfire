@@ -1,0 +1,5 @@
+<% if current_user.invited?(@user) %>
+	<%= render 'unrequest' %>
+<% else %>
+	<%= render 'request' %>
+<% end %>

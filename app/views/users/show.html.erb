@@ -1,0 +1,9 @@
+<% provide(:title, @user.name) %>
+
+<div class="container">
+	<% if @user == current_user %>
+	  <%= render 'user' %>
+	<% else %>
+	  <%= render 'other_user' %>
+	<% end %>
+</div>
