@@ -1,4 +1,8 @@
 <% provide(:title, 'Home') %>
 <div class='center'>
-	<h1>Welcome!</h1>
+	<% if user_signed_in? %>
+	  <%= render 'shared/signed_in' %>
+	<% else %>
+		<%= render 'shared/signed_out' %>
+	<% end %>
 </div>
