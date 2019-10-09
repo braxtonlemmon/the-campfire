@@ -8,6 +8,8 @@ gem 'rails', '~> 5.2.3'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails'
 
+gem 'devise'
+
 
 
 # Use postgresql as the database for Active Record

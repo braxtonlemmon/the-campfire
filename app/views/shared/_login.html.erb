@@ -1,0 +1,19 @@
+<div class='form-inline'>
+  <div class='row'>
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			<div class='input-group'>
+				<span class="field input-group-addon">
+					<%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control mr-4 ml-3" %>
+				</span>
+
+				<span class="field input-group-addon">
+					<%= f.password_field :password, autocomplete: "current-password", placeholder: "password", class: 'form-control mr-4 ml-3' %>
+				</span>
+
+				<span class="actions input-group-addon">
+					<%= f.submit "Log in", class: 'btn' %>
+				</span>
+			</div>
+		<% end %>
+	</div>
+</div>

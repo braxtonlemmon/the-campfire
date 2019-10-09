@@ -1,9 +1,14 @@
 <header class='navbar navbar-fixed-top'>
 	<div class='container'>
-		<h1>odinbook</h1>
-		<ul class='nav navbar-nav navbar-right'>
-			<li><%= link_to 'Sign up', '#' %></li>
-			<li><%= link_to 'Log in', '#' %></li>
-		</ul>
+		<h4 class='logo'><%= link_to 'odinbook', root_path %></h4>
+		<nav>
+			<ul class='nav navbar-nav navbar-right'>
+				<% if user_signed_in? %>
+					<li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+				<% else %>
+					<li><%= render 'shared/login' %></li>
+				<% end %>
+			</ul>
+		</nav>
 	</div>
 </header>
