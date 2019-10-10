@@ -9,7 +9,9 @@ class FriendshipsController < ApplicationController
 		redirect_to current_user
 	end
 
-  def destroy
+	def destroy
+		Friendship.destroy_reciprocal_for_ids(current_user.id, params[:friend_id])
+		redirect_to root_path
 	end
 	
 	private

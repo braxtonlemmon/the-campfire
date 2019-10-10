@@ -11,8 +11,10 @@ class FriendRequestsController < ApplicationController
 	end
 
 	def destroy
-		@user = FriendRequest.find(params[:id]).invitee 
-		current_user.uninvite(@user)
+		request = FriendRequest.find(params[:id])
+		@user = params[:inviter_id] ? request.inviter : request.invitee
+		request.inviter.uninvite(request.invitee)
+		redirect_to current_user if params[:inviter_id]
 		respond_to do |format|
 			format.html { redirect_to @user }
 			format.js
