@@ -1,0 +1,13 @@
+{
+	"sqltools.connections": [
+		{
+			"database": "odin-facebook_development",
+			"dialect": "PostgreSQL",
+			"name": "odin-facebook",
+			"password": "braxton",
+			"port": 5432,
+			"server": "localhost",
+			"username": "braxton"
+		}
+	]
+}

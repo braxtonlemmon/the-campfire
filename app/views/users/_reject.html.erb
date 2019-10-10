@@ -1,0 +1,6 @@
+<%= form_for(current_user.passive_requests.find_by(inviter_id: locals[:inviter_id]),
+						 html: { method: :delete },
+						 remote: true) do |f| %>
+	<%= f.submit 'Reject', class: 'btn btn-sm' %>
+<% end %>
+

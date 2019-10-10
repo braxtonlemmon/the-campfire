@@ -1,5 +1,11 @@
-<% if current_user.invited?(@user) %>
-	<%= render 'unrequest' %>
+<% if current_user.friends.include?(@user) %>
+  <p>Friends!</p>
 <% else %>
-	<%= render 'request' %>
+	<div id='friend_request_form'>
+			<% if current_user.invited?(@user) %>
+				<%= render 'unrequest' %>
+			<% else %>
+				<%= render 'request' %>
+			<% end %>
+	</div>
 <% end %>
