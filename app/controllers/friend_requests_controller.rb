@@ -1,6 +1,5 @@
 class FriendRequestsController < ApplicationController
-	before_action :authenticate_user!
-
+	
 	def create
 		@user = User.find(params[:invitee_id])
 		current_user.invite(@user)

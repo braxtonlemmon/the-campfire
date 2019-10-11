@@ -1,5 +1,4 @@
 class FriendshipsController < ApplicationController
-	before_action :authenticate_user!
 
 	def create
 		Friendship.create_reciprocal_for_ids(current_user.id, params[:friend_id])
