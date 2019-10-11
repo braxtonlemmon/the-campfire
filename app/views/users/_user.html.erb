@@ -1,19 +1,24 @@
-<h2>Hey, <%= @user.name %></h2>
-<h3>Received requests</h3>
+<h1>Hey, <%= @user.name.capitalize %></h1>
+<% unless @user.inviters.empty? %>
+	<h4>Received requests</h4>
 	<ul>
 		<% @user.inviters.each do |inviter| %>
-	  	<li>
+			<li>
 				<%= link_to "#{inviter.name}", inviter %>
 				<%= render 'accept', locals: {inviter_id: inviter.id} %>
 				<%= render 'reject', locals: {inviter_id: inviter.id} %>
 			</li>
 		<% end %>
 	</ul>
-<h3>Sent requests</h3>
+<% end %>
+
+<% unless @user.invitees.empty? %>
+	<h4>Sent requests</h4>
 	<ul>
 		<% @user.invitees.each do |invitee| %>
-	  	<li>
+			<li>
 				<%= link_to "#{invitee.name}", invitee %>
 			</li>
 		<% end %>
-	</ul>
+	</ul>	
+<% end %>
