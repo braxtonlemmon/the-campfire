@@ -2,10 +2,13 @@
   <p>Friends!</p>
 <% else %>
 	<div id='friend_request_form'>
-			<% if current_user.invited?(@user) %>
+			<% if @user.invited?(current_user) %>
+				<%= render 'accept', locals: {inviter_id: @user.id} %>
+				<%= render 'reject', locals: {inviter_id: @user.id} %>
+			<% elsif current_user.invited?(@user) %>
 				<%= render 'unrequest' %>
 			<% else %>
 				<%= render 'request' %>
 			<% end %>
 	</div>
-<% end %>
+<% end %> 
