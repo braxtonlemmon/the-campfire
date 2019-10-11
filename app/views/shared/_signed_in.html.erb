@@ -1,1 +1,8 @@
-<h1>Welcome, <%= current_user.name.capitalize %></h1>
+<div class='row'>
+	<h1>Welcome, <%= current_user.name.capitalize %></h1>
+	<section class='write'>
+		<%= render 'shared/post_form' %>
+	</section>
+	<section class='posts'>
+	  <%= render 'shared/posts' %>
+	</secion>

@@ -22,10 +22,19 @@ textarea {
 
 header { 
 	margin-top: 20px;
+	margin-bottom: 30px;
+	background-color: gray;
+	a {
+		color: rgb(70, 38, 38);
+	}
 }
 
 footer {
 	padding-left: 10px;
+}
+
+.flash {
+	margin-top: 20px;
 }
 .center {
 	text-align: center;
@@ -40,4 +49,9 @@ footer {
 
 .btn {
 	background-color: lightblue;
+}
+
+.feed_posts {
+	text-align: left;
+	list-style: none;
 }

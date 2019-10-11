@@ -1,0 +1,8 @@
+<ul class='feed_posts'>
+  <% @posts.each do |post| %>
+		<li>
+			<%= link_to post.author.name, post.author %><br>
+			Post:   <%= post.content %><br><br>
+		</li>
+	<% end %>
+</ul>

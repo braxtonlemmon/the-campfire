@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 	resources :friend_requests
 	resources :friendships
 	resources :notifications
+	resources :posts
 end

@@ -16,6 +16,8 @@ class User < ApplicationRecord
 															foreign_key: 'invitee_id',
 															dependent: :destroy
 	has_many :inviters, through: :passive_requests
+
+	has_many :posts, foreign_key: 'author_id', dependent: :destroy
 	
 	def invite(other_user)
 		invitees << other_user
@@ -36,5 +38,12 @@ class User < ApplicationRecord
 	def remove_friend(other_user)
 		friends.delete(other_user)
 	end
+
+	def feed 
+		friend_ids = 'SELECT friend_id FROM friendships
+									WHERE user_id = :user_id'
+		Post.where("author_id IN (#{friend_ids})
+								OR author_id = :user_id", user_id: id)
+	end									
 
 end
