@@ -1,0 +1,8 @@
+<% provide(:title, 'Notifications') %>
+<div class='container'>
+	<h1>Notifications</h1>
+	<% unless @requests.empty? %>
+		<h4>Friend requests</h4>
+		<%= render 'friend_requests' %>
+	<% end %>
+</div>
