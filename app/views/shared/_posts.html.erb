@@ -3,7 +3,7 @@
 		<li>
 			<%= link_to post.author.name, post.author %><br>
 			Post:   <%= post.content %><br>
-			<%= link_to 'like', '#' %><br><br>
+			<%= render partial: 'shared/like_form', locals: {post: post} %>
 		</li>
 	<% end %>
 </ul>

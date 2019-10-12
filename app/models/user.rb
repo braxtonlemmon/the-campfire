@@ -41,6 +41,19 @@ class User < ApplicationRecord
 									WHERE user_id = :user_id'
 		Post.where("author_id IN (#{friend_ids})
 								OR author_id = :user_id", user_id: id)
-	end									
+	end		
+	
+	def like(post)
+		likes << post
+	end
+
+	def unlike(like)
+		likes.delete(like)
+	end
+
+	def likes?(post)
+		like = Like.where('post_id = ? and user_id = ?', post.id, id)
+		like.count > 0
+	end
 
 end

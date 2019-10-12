@@ -1,0 +1,8 @@
+<%# locals[:post] available %>
+
+<div id='like_form'>
+<% if current_user.likes?(post) %>
+	<%= render partial: 'shared/unlike', locals: {post_id: post.id} %>
+<% else %>
+	<%= render partial: 'shared/like', locals: {post_id: post.id} %>
+<% end %>	
