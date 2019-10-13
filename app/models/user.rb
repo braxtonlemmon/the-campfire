@@ -41,7 +41,8 @@ class User < ApplicationRecord
 									WHERE user_id = :user_id'
 		Post.where("author_id IN (#{friend_ids})
 								OR author_id = :user_id", user_id: id)
-	end		
+				.order(updated_at: :desc)
+	end	
 	
 	def like(post)
 		likes << post

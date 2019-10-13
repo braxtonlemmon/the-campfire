@@ -1,9 +1,11 @@
 <ul class='feed_posts'>
   <% @posts.each do |post| %>
 		<li>
-			<%= link_to post.author.name, post.author %><br>
+			<%= link_to post.author.name.capitalize, post.author %><br>
 			Post:   <%= post.content %><br>
+			<em>- <%= post.updated_at.strftime("%B %e, %Y") %> -</em>
 			<%= render partial: 'shared/like_form', locals: {post: post} %>
+			<br><br>
 		</li>
 	<% end %>
 </ul>

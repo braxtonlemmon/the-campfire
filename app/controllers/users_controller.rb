@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 
 	def show
+		@post = Post.new
 		@user = User.find(params[:id])
-		@posts = Post.where('author_id = ?', @user.id)
+		@posts = @user.feed
 	end
 
 	def friends
