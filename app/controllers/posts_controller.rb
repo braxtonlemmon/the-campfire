@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 			redirect_to root_path
 		else
 			flash.now[:danger] = 'Error. Try again.'
-			render 'new'
+			redirect_back fallback_location: root_path
 		end
 	end
 
