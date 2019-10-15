@@ -1,6 +1,10 @@
 <% provide(:title, @user.name) %>
 
 <div class="container">
+  <div class='row'>
+		<%= gravatar_for @user %>
+		<h2><%= @user.name.capitalize %></h2>
+	</div>
 	<% if @user == current_user %>
 	  <%= render 'user' %>
 	<% else %>
