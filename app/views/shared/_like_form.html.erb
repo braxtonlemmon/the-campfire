@@ -7,7 +7,7 @@
 	<% end %>	
 <% else %>
 	<%= form_for(current_user.likes.build) do |f| %>
-		<div><%= hidden_field_tag :post_id, post.id %>
+		<div><%= hidden_field_tag :post_id, post.id %></div>
 		<%= f.submit 'Like', class: 'btn btn-sm' %>
 	<% end %>
 <% end %>	

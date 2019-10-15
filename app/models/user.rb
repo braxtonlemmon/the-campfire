@@ -14,7 +14,8 @@ class User < ApplicationRecord
 															dependent: :destroy
 	has_many :inviters, through: :passive_requests
 	has_many :posts, foreign_key: 'author_id', dependent: :destroy
-	has_many :likes
+	has_many :likes, dependent: :destroy
+	has_many :comments, foreign_key: 'author_id', dependent: :destroy
 
 	validates :name, presence: true, length: { maximum: 40 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i

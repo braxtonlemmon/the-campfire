@@ -3,8 +3,12 @@
 		<li>
 			<%= link_to post.author.name.capitalize, post.author %><br>
 			Post:   <%= post.content %><br>
-			<em>- <%= post.updated_at.strftime("%B %e, %Y") %> -</em>
+			<small><em>
+				...<%= post.updated_at.strftime("%b %e, %Y at %k:%M") %>
+			</em></small>
 			<%= render partial: 'shared/like_form', locals: {post: post} %>
+			<%= render partial: 'shared/comments', locals: {post: post} %>
+			<%= render partial: 'shared/comment_form', locals: {post: post} %>
 			<br><br>
 		</li>
 	<% end %>
