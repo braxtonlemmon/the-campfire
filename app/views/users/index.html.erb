@@ -3,9 +3,12 @@
 <div class='container'>
 	<ul>
 		<% @users.each do |user| %>
+
 			<li>
-				<%= link_to user.name, user %>
+					<%= link_to user.name, user %>
+					<%= render 'friend_request_form', object: user %>
 			</li>
+
 		<% end %>
 	<ul>
 </div>

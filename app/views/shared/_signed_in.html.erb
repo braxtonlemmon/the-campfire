@@ -1,5 +1,7 @@
 <div class='row'>
+	<%= gravatar_for(current_user) %>
 	<h1>Welcome, <%= current_user.name.capitalize %></h1>
+</div>
 	<section class='write'>
 		<%= render 'shared/post_form' %>
 	</section>

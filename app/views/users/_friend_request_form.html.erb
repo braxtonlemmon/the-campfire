@@ -1,14 +1,15 @@
-<% if current_user.friends.include?(@user) %>
+<% if current_user.friends.include?(object) %>
   <p>Friends!</p>
 <% else %>
 	<div id='friend_request_form'>
-			<% if @user.invited?(current_user) %>
-				<%= render 'accept', locals: {inviter_id: @user.id} %>
-				<%= render 'reject', locals: {inviter_id: @user.id} %>
-			<% elsif current_user.invited?(@user) %>
-				<%= render 'unrequest' %>
+			<% if object.invited?(current_user) %>
+				<%= render 'accept', locals: {inviter_id: object.id} %>
+				<%= render 'reject', locals: {inviter_id: object.id} %>
+			<% elsif current_user.invited?(object) %>
+				<%= render 'unrequest', object: object %>
 			<% else %>
-				<%= render 'request' %>
+				<%= render 'request', object: object %>
 			<% end %>
 	</div>
 <% end %> 
+
