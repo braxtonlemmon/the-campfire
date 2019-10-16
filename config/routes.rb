@@ -18,4 +18,6 @@ Rails.application.routes.draw do
 	resources :posts
 	resources :likes
 	resources :comments
+
+	mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

@@ -15,6 +15,7 @@ gem 'jquery-rails'
 
 gem 'omniauth-facebook'
 gem 'figaro'
+gem 'letter_opener_web', :group => :development
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
