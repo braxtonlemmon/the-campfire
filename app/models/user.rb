@@ -19,6 +19,8 @@ class User < ApplicationRecord
 	has_many :likes, dependent: :destroy
 	has_many :comments, foreign_key: 'author_id', dependent: :destroy
 
+	has_one_attached :avatar
+	
 	validates :name, presence: true, length: { maximum: 40 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 	validates :email, presence: true, length: {maximum: 255},

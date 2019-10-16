@@ -16,6 +16,8 @@ gem 'jquery-rails'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'letter_opener_web', :group => :development
+gem 'aws-sdk-s3', require: false
+gem 'mini_magick'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'

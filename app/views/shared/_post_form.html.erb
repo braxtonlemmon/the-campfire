@@ -1,6 +1,7 @@
 <div class='container'>
   <%= form_for(@post) do |f| %>
 	  <%= f.text_area :content, placeholder: 'Write your post here.' %>
+		<%= f.file_field :image, accept: 'image/png, image/jpeg' %>
 		<%= f.submit 'Post', class: 'btn btn-primary' %>
 	<% end %>
 </div>

@@ -1,5 +1,6 @@
 <div class='row'>
 	<%= gravatar_for(current_user) %>
+	<%= image_tag(url_for(current_user.avatar)) if current_user.avatar.attached?%>
 	<h1>Welcome, <%= current_user.name.capitalize %></h1>
 </div>
 	<section class='write'>

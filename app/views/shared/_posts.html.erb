@@ -3,6 +3,7 @@
 		<li>
 			<%= link_to post.author.name.capitalize, post.author %><br>
 			Post:   <%= post.content %><br>
+			<%= image_tag(url_for(post.image)) if post.image.attached? %>
 			<small><em>
 				...<%= post.updated_at.strftime("%b %e, %Y at %k:%M") %>
 			</em></small>
