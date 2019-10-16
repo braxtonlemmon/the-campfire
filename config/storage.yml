@@ -10,10 +10,10 @@ local:
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
   service: S3
-  access_key_id: <%= ENV['AWS_ID'] %>
-  secret_access_key: <%= ENV['AWS_SECRET'] %>
+  access_key_id: ENV['AWS_ID'] 
+  secret_access_key: ENV['AWS_SECRET'] 
   region: eu-west-3
-  bucket: <%= ENV['AWS_BUCKET'] %>
+  bucket: 'odin-facebook-project'
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
