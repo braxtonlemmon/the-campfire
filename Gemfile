@@ -17,8 +17,9 @@ gem 'omniauth-facebook'
 gem 'figaro'
 gem 'letter_opener_web', :group => :development
 gem 'aws-sdk-s3', require: false
-gem 'mini_magick'
+
 gem 'sendgrid-ruby'
+
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -43,8 +44,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
+gem 'mini_magick', '~> 4.8'
+gem 'image_processing', '~> 1.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

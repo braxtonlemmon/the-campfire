@@ -2,8 +2,8 @@
   <% @posts.each do |post| %>
 		<li>
 			<%= link_to post.author.name.capitalize, post.author %><br>
-			Post:   <%= post.content %><br>
-			<%= image_tag(url_for(post.image)) if post.image.attached? %>
+			<%= post.content %><br>
+			<%= image_tag post.image.variant(resize: "200x200") if post.image.attached? %><br>
 			<small><em>
 				...<%= post.updated_at.strftime("%b %e, %Y at %k:%M") %>
 			</em></small>
