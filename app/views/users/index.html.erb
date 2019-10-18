@@ -5,10 +5,10 @@
 		<% @users.each do |user| %>
 
 			<li>
-					<%= link_to user.name, user %>
-					<%= render 'friend_request_form', object: user %>
+				<%= link_to avatar_for(user, 50), user %>
+				<%= link_to user.name, user %>
+				<%= render 'friend_request_form', object: user %>
 			</li>
-
 		<% end %>
 	<ul>
 </div>

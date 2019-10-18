@@ -1,6 +1,7 @@
 <ul>
 	<% @requests.each do |request| %>
 		<li>
+		  <%= link_to avatar_for(request.inviter, 50), request.inviter %>
 			<%= link_to request.inviter.name.capitalize, request.inviter %>
 			<%= render 'users/accept', locals: {inviter_id: request.inviter.id} %>
 			<%= render 'users/reject', locals: {inviter_id: request.inviter.id} %>
