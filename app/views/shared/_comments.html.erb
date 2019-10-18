@@ -1,7 +1,7 @@
 <ul>
 	<% post.commentz.each do |comment| %>
   	<li>
-			<%= link_to comment.author.name.capitalize, comment.author %>
+			<%= link_to comment.author.name, comment.author %>
 			<%= comment.content %> 
 			<small><em>
 				...<%= comment.updated_at.strftime("%b %e, %Y at %k:%M") %>

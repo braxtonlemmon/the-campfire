@@ -1,7 +1,7 @@
 <ul class='feed_posts'>
   <% @posts.each do |post| %>
 		<li>
-			<%= link_to post.author.name.capitalize, post.author %><br>
+			<%= link_to post.author.name, post.author %><br>
 			<%= post.content %><br>
 			<%= image_tag post.image.variant(resize: "200x200") if post.image.attached? %><br>
 			<small><em>

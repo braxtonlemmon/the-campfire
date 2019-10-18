@@ -1,11 +1,13 @@
 <% provide(:title, 'Friends') %>
-<h1>Your friends</h1>
-<ul>
-	<% @friends.each do |friend| %>
-		<li>
-			<%= link_to avatar_for(friend, 50), friend %>
-			<%= link_to friend.name, friend %>
-		</li>
-	<% end %>
-</ul>
-<%= will_paginate @friends %>
+<div class='container'>
+	<h1>Your friends</h1>
+	<ul>
+		<% @friends.each do |friend| %>
+			<li>
+				<%= link_to avatar_for(friend, 50), friend %>
+				<%= link_to friend.name, friend %>
+			</li>
+		<% end %>
+	</ul>
+	<%= will_paginate @friends %>
+</div>

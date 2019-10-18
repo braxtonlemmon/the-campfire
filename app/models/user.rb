@@ -1,7 +1,10 @@
 class User < ApplicationRecord
+	after_create :capitalize_name
+
   devise :database_authenticatable, :registerable, :confirmable,
 				 :recoverable, :rememberable, :validatable,
 				 :omniauthable, omniauth_providers: %i[facebook]
+
 
 	has_many :friendships, dependent: :destroy
 	has_many :friends, through: :friendships
@@ -27,6 +30,10 @@ class User < ApplicationRecord
 										uniqueness: { case_sensitive: false }
 	validates :password, presence: true, length: { minimum: 6 }, allow_nil: true										
 	
+	def capitalize_name
+		update_attribute(:name, name.capitalize)
+	end
+
 	def self.from_omniauth(auth)
 		where(provider: auth.provider, uid: auth.uid).first_or_create! do |user|
 			user.email = auth.info.email
