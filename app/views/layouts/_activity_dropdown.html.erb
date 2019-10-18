@@ -1,0 +1,16 @@
+<li class='dropdown'>
+	<a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+		Notifications <b class='caret'></b>
+	</a>
+	<ul class='dropdown-menu'>
+		<% @activities.each do |activity| %>
+			<div class='activity'>
+				<li>
+					<%= link_to activity.owner.name, activity.owner if activity.owner %>
+					<%= render_activity activity %>
+				</li>
+				<li class='divider'></li>
+			</div>
+		<% end %>
+	</ul>
+</li>
