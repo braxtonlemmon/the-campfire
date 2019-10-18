@@ -1,5 +1,6 @@
 class Like < ApplicationRecord
-  belongs_to :user
+	include PublicActivity::Common 
+	belongs_to :user
 	belongs_to :post
 	
 	validates :user_id, presence: true

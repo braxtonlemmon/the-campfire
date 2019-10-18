@@ -14,8 +14,10 @@ class CommentsController < ApplicationController
   end
 
 	def destroy
-				# @comment.create_activity :destroy, owner: current_user
-
+		@comment = Comment.find(params[:id])
+		@comment.destroy
+		flash[:success] = 'Comment deleted!'
+		redirect_back fallback_location: root_path
   end
 	
 	private

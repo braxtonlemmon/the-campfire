@@ -1,11 +1,9 @@
 class Post < ApplicationRecord
 	include PublicActivity::Common 
-	# tracked except: :update, owner: ->(controller, model) { controller && controller.current_user }
-
 
 	has_many :likes, dependent: :delete_all
 	belongs_to :author, class_name: 'User', foreign_key: 'author_id'
-	has_many :comments, as: :commentable
+	has_many :comments, as: :commentable, dependent: :delete_all
 	validates :content, length: { maximum: 10000 }
 	validates :author_id, presence: true
 
