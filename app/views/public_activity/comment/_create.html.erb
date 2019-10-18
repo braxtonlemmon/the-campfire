@@ -1,0 +1,8 @@
+added a comment
+<% if activity.trackable %>
+	<strong>"<%= truncate(activity.trackable.content, length: 15) %>"</strong>
+	to <%= activity.trackable.commentable.author.name %>'s post
+	<strong>"<%= truncate(activity.trackable.commentable.content) %>"</strong>
+<% else %>
+	which has since been removed.
+<% end %>

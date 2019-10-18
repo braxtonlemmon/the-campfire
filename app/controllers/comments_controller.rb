@@ -2,7 +2,9 @@ class CommentsController < ApplicationController
 
 	def create
 		@post = Post.find(params[:comment][:commentable_id])
-		if @post.comments.create(comment_params)
+		@comment = @post.comments.build(comment_params)
+		if @comment.save
+			@comment.create_activity :create, owner: current_user
 			flash[:success] = 'Successfully commented!'
 			redirect_back fallback_location: root_path
 		else
@@ -11,7 +13,9 @@ class CommentsController < ApplicationController
 		end
   end
 
-  def destroy
+	def destroy
+				# @comment.create_activity :destroy, owner: current_user
+
   end
 	
 	private

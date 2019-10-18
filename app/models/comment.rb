@@ -1,4 +1,7 @@
 class Comment < ApplicationRecord
+	include PublicActivity::Common
+	# tracked owner: ->(controller, model) { controller && controller.current_user }
+	
 	belongs_to :commentable, polymorphic: true
 	belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 

@@ -1,12 +1,9 @@
 class PostsController < ApplicationController
-	
-	def new
-		@post = Post.new
-	end
 
 	def create
 		@post = current_user.posts.build(post_params)
 		if @post.save
+			@post.create_activity :create, owner: current_user
 			flash[:success] = 'Post created!'
 			redirect_to root_path
 		else
@@ -16,6 +13,10 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
+		@post = Post.find(params[:id])
+		@post.destroy
+		flash[:success] = 'Post deleted!'
+		redirect_back fallback_location: root_path
 	end
 
 	def edit

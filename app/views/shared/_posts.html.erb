@@ -8,6 +8,10 @@
 				...<%= post.updated_at.strftime("%b %e, %Y at %k:%M") %>
 			</em></small>
 			<%= render partial: 'shared/like_form', locals: {post: post} %>
+			<% if post.author == current_user %>
+			  <%= link_to 'delete', post, method: :delete,
+																		data: { confirm: 'Are you sure?' } %>
+			<% end %>																		
 			<%= render partial: 'shared/comments', locals: {post: post} %>
 			<%= render partial: 'shared/comment_form', locals: {post: post} %>
 			<br><br>

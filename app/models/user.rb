@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-	# Include default devise modules. Others available are:
-  # :lockable, :timeoutable, :trackable
   devise :database_authenticatable, :registerable, :confirmable,
 				 :recoverable, :rememberable, :validatable,
 				 :omniauthable, omniauth_providers: %i[facebook]
@@ -16,6 +14,7 @@ class User < ApplicationRecord
 															dependent: :destroy
 	has_many :inviters, through: :passive_requests
 	has_many :posts, foreign_key: 'author_id', dependent: :destroy
+	has_many :images, foreign_key: 'author_id', dependent: :destroy
 	has_many :likes, dependent: :destroy
 	has_many :comments, foreign_key: 'author_id', dependent: :destroy
 

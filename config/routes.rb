@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'comments/new'
-  get 'comments/create'
-  get 'comments/destroy'
-  get 'comments/index'
 	root 'static_pages#home'
 	devise_for :users, controllers: { sessions: 'users/sessions',
 																		registrations: 'users/registrations',
@@ -18,6 +14,7 @@ Rails.application.routes.draw do
 	resources :posts
 	resources :likes
 	resources :comments
-
+	resources :images
+	resources :activities
 	mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 end

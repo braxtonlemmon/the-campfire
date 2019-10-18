@@ -19,6 +19,7 @@ gem 'letter_opener_web', :group => :development
 gem 'aws-sdk-s3', require: false
 
 gem 'sendgrid-ruby'
+gem 'public_activity'
 
 
 # Use postgresql as the database for Active Record

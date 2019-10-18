@@ -1,0 +1,6 @@
+added a post
+<% if activity.trackable %>
+	<strong>"<%= truncate(activity.trackable.content, length: 15) %>"	</strong>
+<% else %>
+	which has since been removed.
+<% end %>
