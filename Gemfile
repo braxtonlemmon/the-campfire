@@ -21,7 +21,8 @@ gem 'aws-sdk-s3', require: false
 gem 'sendgrid-ruby'
 gem 'public_activity'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'

@@ -12,6 +12,10 @@ class FriendshipsController < ApplicationController
 		Friendship.destroy_reciprocal_for_ids(current_user.id, params[:friend_id])
 		redirect_to root_path
 	end
+
+	def index
+		@friends = User.where(id: current_user.friend_ids).paginate(page: params[:page])
+	end
 	
 	private
 

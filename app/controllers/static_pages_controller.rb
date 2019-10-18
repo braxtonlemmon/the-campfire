@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
 	def home
 		if user_signed_in?
 			@post = current_user.posts.build
-			@posts = current_user.feed
+			@posts = current_user.feed.paginate(page: params[:page])
 			@image = current_user.images.build
 		end
 	end

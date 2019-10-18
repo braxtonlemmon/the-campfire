@@ -3,7 +3,6 @@
 <div class='container'>
 	<ul>
 		<% @users.each do |user| %>
-
 			<li>
 				<%= link_to avatar_for(user, 50), user %>
 				<%= link_to user.name, user %>
@@ -11,4 +10,5 @@
 			</li>
 		<% end %>
 	<ul>
+	<%= will_paginate @users%>
 </div>
