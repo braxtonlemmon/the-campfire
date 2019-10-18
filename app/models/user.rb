@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	require 'open-uri'
 	after_create :capitalize_name
 
   devise :database_authenticatable, :registerable, :confirmable,
@@ -39,10 +40,11 @@ class User < ApplicationRecord
 			user.email = auth.info.email
 			user.password = Devise.friendly_token[0, 20]
 			user.name = auth.info.name   # assuming the user model has a name
-			# user.image = auth.info.image # assuming the user model has an image
+			downloaded_image = open(auth.info.image)
+			user.avatar.attach(io: downloaded_image, filename: 'avatar.jpg', content_type: downloaded_image.content_type)
 			# If you are using confirmable and the provider(s) you use validate emails, 
 			# uncomment the line below to skip the confirmation emails.
-			# user.skip_confirmation!
+			user.skip_confirmation!
 		end
 	end
 
