@@ -12,6 +12,21 @@
 					<li><%= link_to "Friends (#{current_user.friends.count})",
 						 						   friends_user_path(current_user.id) %></li>
 					<li><%= link_to 'All users', users_path %></li>
+					<li class='dropdown'>
+						<a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+							Notifications <b class='caret'></b>
+						</a>
+						<ul class='dropdown-menu'>
+						  <% @activities.each do |activity| %>
+								<div class='activity'>
+	  							<li>
+										<%= link_to activity.owner.name, activity.owner if activity.owner %>
+										<%= render_activity activity %><br><br>
+									</li>
+								</div>
+							<% end %>
+						</ul>
+					</li>
 					<li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
 				<% else %>
 					<li><%= render 'shared/login' %></li>
