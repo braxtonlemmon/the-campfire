@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :correct_user, only: [:edit, :update]
+	
 	def show
 		@post = Post.new
 		@user = User.find(params[:id])
@@ -28,5 +30,10 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(:email, :name, :avatar, :password, :password_confirmation)
+	end
+
+	def correct_user
+		@user = User.find(params[:id])
+		redirect_to root_path unless @user == current_user
 	end
 end
