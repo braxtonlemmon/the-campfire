@@ -1,11 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  content: MyText
-  commentable_id: 1
-  commentable_type: MyString
+  content: I could not agree with this more!
+  commentable: banana
+  commentable_type: Post
 
 two:
-  content: MyText
-  commentable_id: 1
-  commentable_type: MyString
+  content: This is so weird, weirdo.
+  commentable: orange_juice
+  commentaple_type: Post
+
+

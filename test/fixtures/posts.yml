@@ -1,9 +1,25 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+banana:
+  content: This banana is too ripe.
+  author: braxton
+  updated_at: <%= 10.minutes.ago %> 
 
-one:
-  content: MyText
-  user: one
+climbing:
+  content: Today I am going to climb so gracefully. You will be amazed.
+  author: braxton
+  updated_at: <%= 3.days.ago %> 
 
-two:
-  content: MyText
-  user: two
+  
+lunch_time:
+  content: We will eat pasta for lunch today.
+  author: tommy
+  updated_at: <%= 4.hours.ago %>
+
+favorite_song:
+  content: It's probably too difficult to say.
+  author: greg
+  updated_at: <%= 4.days.ago %>
+
+orange_juice:
+  content: I really love orange juice.
+  author: dallin
+  updated_at: <%= 1.year.ago %>

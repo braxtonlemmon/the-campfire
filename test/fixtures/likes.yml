@@ -1,9 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  user: one
-  post: one
+  user: braxton
+  post: favorite_song
 
 two:
-  user: two
-  post: two
+  user: dallin
+  post: lunch_time
+
+three:
+  user: greg
+  post: lunch_time
