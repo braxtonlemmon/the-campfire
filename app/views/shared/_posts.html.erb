@@ -8,7 +8,9 @@
 			<small><em>
 				...<%= post.updated_at.strftime("%b %e, %Y at %k:%M") %>
 			</em></small>
+			
 			<%= render partial: 'shared/like_form', locals: {post: post} %>
+			~<%= pluralize(post.likes.count, 'like') %>~
 			<% if post.author == current_user %>
 				<%= link_to 'delete', post,
 														  method: :delete,
