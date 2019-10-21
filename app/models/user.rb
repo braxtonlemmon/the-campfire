@@ -25,7 +25,6 @@ class User < ApplicationRecord
 	has_one_attached :avatar
 	
 	validates :name, presence: true, length: { maximum: 40 }
-	validates :password, presence: true, allow_nil: true
 	
 	def capitalize_name
 		self.name = self.name.titleize
@@ -71,6 +70,10 @@ class User < ApplicationRecord
 
 	def remove_friend(other_user)
 		friends.delete(other_user)
+	end
+
+	def friends?(other_user)
+		friends.include?(other_user)
 	end
 
 	def feed 
