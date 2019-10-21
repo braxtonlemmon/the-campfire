@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 	require 'open-uri'
-	after_create :capitalize_name
+	before_save :capitalize_name
 
   devise :database_authenticatable, :registerable, :confirmable,
 				 :recoverable, :rememberable, :validatable,
@@ -28,7 +28,7 @@ class User < ApplicationRecord
 	validates :password, presence: true, allow_nil: true
 	
 	def capitalize_name
-		update_attribute(:name, name.capitalize)
+		self.name = self.name.titleize
 	end
 
 	def self.from_omniauth(auth)
