@@ -4,10 +4,6 @@ class FriendRequestsController < ApplicationController
 		@user = User.find(params[:invitee_id])
 		current_user.invite(@user)
 		redirect_back fallback_location: root_path
-		# respond_to do |format|
-		# 	format.html { redirect_to @user }
-		# 	format.js
-		# end
 	end
 
 	def destroy
@@ -15,10 +11,5 @@ class FriendRequestsController < ApplicationController
 		@user = params[:inviter_id] ? request.inviter : request.invitee
 		request.inviter.uninvite(request.invitee)
 		params[:inviter_id] ? (redirect_to current_user) : (redirect_back fallback_location: root_path)
-		# redirect_to current_user if params[:inviter_id]
-		# respond_to do |format|
-		# 	format.html { redirect_to @user }
-		# 	format.js
-		# end
 	end
 end

@@ -2,10 +2,12 @@ one:
   content: I could not agree with this more!
   commentable: banana
   commentable_type: Post
+  author: greg
 
 two:
   content: This is so weird, weirdo.
   commentable: orange_juice
   commentable_type: Post
+  author: braxton
 
 

@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 	def create
 		@post = Post.find(params[:comment][:commentable_id])
 		@comment = @post.comments.build(comment_params)
-		if @comment.save
+		if @comment.save!
 			@comment.create_activity :create, owner: current_user
 			flash[:success] = 'Successfully commented!'
 			redirect_back fallback_location: root_path
