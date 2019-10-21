@@ -25,6 +25,7 @@ class User < ApplicationRecord
 	has_one_attached :avatar
 	
 	validates :name, presence: true, length: { maximum: 40 }
+	validates :password, presence: true, allow_nil: true
 	
 	def capitalize_name
 		update_attribute(:name, name.capitalize)
