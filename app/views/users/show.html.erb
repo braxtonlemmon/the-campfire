@@ -2,7 +2,9 @@
 
 <div class="container">
   <div class='row'>
-		<%= avatar_for @user %>
+		<div class='avatar'>
+			<%= avatar_for @user %>
+		</div>
 		<h2><%= @user.name %></h2>
 	</div>
 	<% if @user == current_user %>
