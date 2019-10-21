@@ -2,7 +2,6 @@ require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
 	include Devise::Test::IntegrationHelpers
-
 	
 	def setup
 		@post = posts(:banana)
@@ -22,8 +21,13 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 		assert_redirected_to new_user_session_path
 	end
 
-	test 'should redirect destroy for wrong micropost' do
-		sign_in users(:braxton)
+	test 'should redirect destroy for wrong post' do
+		braxton = users(:braxton)
+		sign_in braxton
+		post = posts(:orange_juice)
+		assert_no_difference 'Post.count' do
+			delete post_path(post)
+		end
 	end
 
 end

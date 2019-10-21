@@ -29,28 +29,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 		get users_url
 		assert_response :success
 	end
-
-	test 'should redirect edit when not logged in' do
-		get edit_user_path(@user)
-		assert_redirected_to new_user_session_path
-	end
-
-	test 'should redirect edit when logged in as wrong user' do
-		sign_in @user
-		get edit_user_path @other_user
-		assert_redirected_to root_path
-	end
-
-	test 'should redirect update when not logged in' do
-		patch user_path(@user), params: { user: { name:  @user.name,
-																							email: @user.email } }
-		assert_redirected_to new_user_session_path
-	end		
-	
-	test 'should redirect update when logged in as wrong user' do
-		sign_in @user
-		patch user_path(@other_user), params: { user: { name:  @user.name,
-																										email: @user.email } }
-		assert_redirected_to root_path																										
-	end
 end

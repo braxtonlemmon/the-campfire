@@ -8,7 +8,6 @@ climbing:
   author: braxton
   updated_at: <%= 3.days.ago %> 
 
-  
 lunch_time:
   content: We will eat pasta for lunch today.
   author: tommy

@@ -1,5 +1,5 @@
 <ul>
-	<% post.commentz.each do |comment| %>
+	<% post.all_comments.each do |comment| %>
   	<li>
 		  <%= link_to avatar_for(comment.author, 30), comment.author %>
 			<%= link_to comment.author.name, comment.author %>
