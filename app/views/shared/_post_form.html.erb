@@ -1,5 +1,6 @@
 <div class='container'>
   <%= form_for(@post) do |f| %>
+		<%= f.hidden_field :author_id, value: current_user.id %>
 	  <%= f.text_area :content, placeholder: 'Write your post here.' %>
 		<%= f.label :image, 'Upload an image:' %>
 		<%= f.file_field :image, accept: 'image/png, image/jpeg' %>

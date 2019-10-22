@@ -5,7 +5,6 @@ class Post < ApplicationRecord
 	belongs_to :author, class_name: 'User', foreign_key: 'author_id'
 	has_many :comments, as: :commentable, dependent: :delete_all
 	validates :content, presence: true, length: { maximum: 10000 }
-	validates :author_id, presence: true
 
 	has_one_attached :image
 

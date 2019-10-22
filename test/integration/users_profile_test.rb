@@ -16,7 +16,7 @@ class UserProfileTest < ActionDispatch::IntegrationTest
 		assert_select 'div.avatar'
 		assert_select '.btn'
 		assert_select 'form'
-		assert_match @user.feed.last.content, response.body
+
 	end
 
 end

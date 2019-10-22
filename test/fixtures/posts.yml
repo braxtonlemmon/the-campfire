@@ -8,6 +8,13 @@ climbing:
   author: braxton
   updated_at: <%= 3.days.ago %> 
 
+<% 30.times do |n| %>
+post_<%= n %>:
+  content: <%= Faker::Lorem.sentence %>
+  updated_at: <%= n.days.ago %>
+  author: braxton
+<% end %>
+
 lunch_time:
   content: We will eat pasta for lunch today.
   author: tommy

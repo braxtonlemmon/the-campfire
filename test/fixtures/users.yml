@@ -21,3 +21,11 @@ greg:
   email: greg@email.com 
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
   confirmed_at: <%= Time.now %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: user_<%= n %>
+  email: user_<%= n %>@email.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  confirmed_at: <%= Time.now %>
+<% end %>

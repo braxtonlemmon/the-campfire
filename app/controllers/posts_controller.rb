@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-	before_action :correct_user, only: [:create, :destroy]
+	before_action :correct_user, only: [:create]
+	before_action :correct_post, only: [:destroy]
 
 	def create
 		@post = current_user.posts.build(post_params)
@@ -26,8 +27,13 @@ class PostsController < ApplicationController
 		params.require(:post).permit(:content, :author_id, :image)
 	end
 
-	def correct_user
+	def correct_post
 		@post = current_user.posts.find_by(id: params[:id])
 		redirect_to root_path if @post.nil?
+	end
+
+	def correct_user
+		@user = User.find(params[:post][:author_id])
+		redirect_to root_path unless @user == current_user
 	end
 end
