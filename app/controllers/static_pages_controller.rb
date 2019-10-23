@@ -7,6 +7,4 @@ class StaticPagesController < ApplicationController
 			@posts = current_user.feed.paginate(page: params[:page])
 		end
 	end
-	
-	private
 end

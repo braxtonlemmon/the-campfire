@@ -6,7 +6,6 @@ class User < ApplicationRecord
 				 :recoverable, :rememberable, :validatable,
 				 :omniauthable, omniauth_providers: %i[facebook]
 
-
 	has_many :friendships, dependent: :destroy
 	has_many :friends, through: :friendships
 	has_many :active_requests, class_name: 'FriendRequest',
@@ -50,7 +49,6 @@ class User < ApplicationRecord
       end
     end
   end
-
 
 	def invite(other_user)
 		invitees << other_user
@@ -96,5 +94,4 @@ class User < ApplicationRecord
 		like = Like.where('post_id = ? and user_id = ?', post.id, id)
 		like.count > 0
 	end
-
 end
