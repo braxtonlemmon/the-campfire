@@ -8,3 +8,6 @@ Capstone Ruby on Rails project from [The Odin Project](https://www.theodinprojec
 - "like" posts
 - sign-in via Facebook (using Omniauth and Devise)
 
+modeling data
+using Postgresql
+Omniauth
