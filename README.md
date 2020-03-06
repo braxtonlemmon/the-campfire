@@ -8,6 +8,16 @@ Capstone Ruby on Rails project from [The Odin Project](https://www.theodinprojec
 - "like" posts
 - sign-in via Facebook (using Omniauth and Devise)
 
-modeling data
-using Postgresql
-Omniauth
+# Concepts/technologies I practiced using:
+- modeling data
+- using Postgresql
+- Omniauth
+- MVC design pattern
+- TDD with RSpec
+- Devise
+
+# Live
+View [live](https://murmuring-wave-95625.herokuapp.com/)
+
+# Authors
+Braxton Lemmon
